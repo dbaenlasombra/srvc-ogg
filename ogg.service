@@ -1,0 +1,12 @@
+[Unit]
+Description=OGG
+[Service]
+Type=forking
+RemainAfterExit=yes
+Environment=PATH=/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/oracle/.local/bin:/ogg/19.1
+WorkingDirectory=/home/ogg/scripts
+User=ogg
+ExecStart=/home/ogg/scripts/srv_ogg.sh 1
+ExecStop=/home/ogg/scripts/srv_ogg.sh 0
+[Install]
+WantedBy=multi-user.target
